@@ -13,6 +13,7 @@ namespace access_array_from_another_form
         public MainForm()
         {
             InitializeComponent();
+            // THIS IS THE "GLUE"
             _printForm.ArrayRequest += _customForm.ArraysRequested;
         }
         private CustomForm _customForm = new CustomForm();
