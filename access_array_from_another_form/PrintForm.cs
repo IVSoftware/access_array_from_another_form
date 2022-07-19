@@ -10,6 +10,11 @@ namespace access_array_from_another_form
         {
             InitializeComponent();
         }
+        public event ArrayRequestEventHandler ArrayRequest;
+        protected virtual void OnArrayRequest(ArrayRequestEventArgs e)
+        {
+            ArrayRequest?.Invoke(this, e);
+        }
         private void buttonShowArray_Click(object sender, EventArgs e)
         {
             ArrayRequestEventArgs req = new ArrayRequestEventArgs();
@@ -30,12 +35,6 @@ namespace access_array_from_another_form
                 );
             }
         }
-        public event ArrayRequestEventHandler ArrayRequest;
-        protected virtual void OnArrayRequest(ArrayRequestEventArgs e)
-        {
-            ArrayRequest?.Invoke(this, e);
-        }
-
         private void buttonClose_Click(object sender, EventArgs e)
         {
             Close();

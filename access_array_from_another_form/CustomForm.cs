@@ -29,6 +29,7 @@ namespace access_array_from_another_form
         {
             _presentValue = $"{cstmtst1.Text}_PV"; //concatinate '_PV'
             _normalValue = $"{cstmtst1.Text}_NV"; //concatinate '_NV'
+            // Make sure index doesn't exceed the size of the array
             if ((_presentArray < _pValue.Length) && (_presentArray < _nValue.Length))
             {
                 _pValue[_presentArray] = _presentValue;

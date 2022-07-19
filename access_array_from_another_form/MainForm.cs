@@ -28,6 +28,7 @@ namespace access_array_from_another_form
                     components.Dispose();
                 }
                 _customForm.Dispose();
+                _printForm.Dispose();
             }
             base.Dispose(disposing);
         }
